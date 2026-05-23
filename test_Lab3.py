@@ -25,6 +25,22 @@ def test_bubble_sort_invalid():
     result = []
     input_arr = [64, 34, 25, 12, 22, 11, 90]
 
-    result = Lab3.bubble_sort(input_arr, 3)
+    result = Lab3.bubble_sort(input_arr, 2)
 
     assert (result == [])
+
+def test_bubble_sort_with_10_or_more_numbers():
+    input_arr = [64, 34, 25, 12, 22, 11, 90, 23, 68, 10]
+    result = Lab3.bubble_sort(input_arr, Lab3.SORT_ASCENDING)
+    assert result == 1
+
+
+def test_bubble_sort_empty_array():
+    input_arr = []
+    result = Lab3.bubble_sort(input_arr, Lab3.SORT_ASCENDING)
+    assert result == 0
+
+def test_bubble_sort_non_integer_array():
+    input_arr = [64, 34, 25, 12, 22, "dkd", 90, 23, 68, 10]
+    result = Lab3.bubble_sort(input_arr, Lab3.SORT_ASCENDING)
+    assert result == 2
